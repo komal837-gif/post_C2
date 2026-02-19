@@ -5,16 +5,25 @@
         <div class="form-group">
             <label class="font-weight-bold" for="title">Title<sup>*</sup></label>
             <input type="text" formControlName="title" class="form-control">
+            <strong class="text-danger" *ngIf="controls['title'].touched && controls['title'].hasError('required')">
+                title is required field!!
+            </strong>
         </div>
         <div class="form-group">
             <label class="font-weight-bold"  for="content">Content<sup>*</sup></label>
             <textarea type="text" formControlName="content" class="form-control"></textarea>
+             <strong class="text-danger" *ngIf="controls['content'].touched && controls['content'].hasError('required')">
+                title is required field!!
+            </strong>
         </div>
         <div class="form-group">
             <label class="font-weight-bold"  for="userId">userId<sup>*</sup></label>
             <select type="text" formControlName="userId" class="form-control">
                 <option *ngFor="let val of optionalVal" [value]="val">{{val}}</option>
             </select>
+             <strong class="text-danger" *ngIf="controls['userId'].touched && controls['userId'].hasError('required')">
+                title is required field!!
+            </strong>
         </div>
 
         <button class="btn btn-block" *ngIf="!isInEditMode" mat-raised-button color="primary">Add Post</button>

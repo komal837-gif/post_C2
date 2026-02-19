@@ -4,7 +4,14 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4 mb-4"  *ngFor="let post of postArr">
-        <app-post-card [postObj]="post"></app-post-card>
-    </div>
+    <ng-container *ngIf="postArr.length > 0;else nopost">
+        <div class="col-md-4 mb-4"  *ngFor="let post of postArr;trackBy:trackById">
+            <app-post-card [postObj]="post"></app-post-card>
+         </div>
+    </ng-container>
+    <ng-template #nopost>
+        <p>
+            No Post Available !!
+        </p>
+    </ng-template>
 </div>

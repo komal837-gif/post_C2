@@ -71,6 +71,11 @@ getNewPost(){
       this.snack.showError(`${err.statusText} !!😐`)
     }
   })
+
+
  }
 
+   trackById(index:Number,post:Ipost){
+    return post.id 
+  }
 }
